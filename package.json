@@ -1,0 +1,23 @@
+{
+    "name": "GitPrestige",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main": "gitprestige.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vladimir37/GitPrestige/"
+    },
+    "scripts": {
+        "start": "node gitprestige.js"
+    },
+    "dependencies": {
+        "body-parser": "*",
+        "express": "*",
+        "jade": "*",
+        "serve-favicon": "*",
+        "mysql": "*",
+        "sequelize": "*",
+        "easy-encryption": "*",
+        "github": "*"
+    }
+}
