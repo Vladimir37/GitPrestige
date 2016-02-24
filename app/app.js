@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var errors = require('./basis/errors');
 var render = require('./basis/render');
 var adding = require('./basis/adding');
+var completion = require('./basis/completion');
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //favicon
-//app.use(favicon(__dirname + '/../client/source/img/favicon/favicon.ico'));
+app.use(favicon(__dirname + '/../client/source/images/favicon/favicon.ico'));
 
 //public source
 app.use('/src', express.static(__dirname + '/../client/source'));
@@ -31,7 +32,10 @@ app.get('/', render('main/index'));
 app.get('/adding', render('main/adding'));
 app.post('/adding', adding);
 
-//Errors
+//completion payment
+app.post('/completion', completion);
+
+//errors
 app.use(errors.e404);
 app.use(errors.render);
 
