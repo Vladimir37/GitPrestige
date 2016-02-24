@@ -28,7 +28,11 @@ tables.bots = sequelize.define('bots', {
     pass: Sequelize.TEXT,
     mail: Sequelize.TEXT,
     starred: Sequelize.TEXT,
-    followed: Sequelize.TEXT
+    followed: Sequelize.TEXT,
+    active: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    }
 });
 
 tables.orders = sequelize.define('orders', {
@@ -38,10 +42,15 @@ tables.orders = sequelize.define('orders', {
         autoIncrement: true
     },
     price: Sequelize.INTEGER,
+    profile: Sequelize.TEXT,
     stars: Sequelize.TEXT,
     stars_count: Sequelize.INTEGER,
-    follow: Sequelize.TEXT,
-    follow_count: Sequelize.INTEGER
+    follow_count: Sequelize.INTEGER,
+    key: Sequelize.TEXT,
+    complete: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+    }
 });
 
 tables.actions = sequelize.define('actions', {

@@ -6,6 +6,7 @@ var errors = require('./basis/errors');
 var render = require('./basis/render');
 var adding = require('./basis/adding');
 var completion = require('./basis/completion');
+var ordering = require('./basis/ordering');
 
 var app = express();
 
@@ -34,6 +35,9 @@ app.post('/adding', adding);
 
 //completion payment
 app.post('/completion', completion);
+
+//creating new order
+app.post('/ordering', ordering);
 
 //errors
 app.use(errors.e404);
