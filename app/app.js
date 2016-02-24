@@ -2,11 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 
-var errors = require('./basis/errors');
+var errors = require('./routes/errors');
 var render = require('./basis/render');
-var adding = require('./basis/adding');
-var completion = require('./basis/completion');
-var ordering = require('./basis/ordering');
+var adding = require('./routes/adding');
+var completion = require('./routes/completion');
+var ordering = require('./routes/ordering');
 
 var app = express();
 

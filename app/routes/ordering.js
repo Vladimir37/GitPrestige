@@ -1,6 +1,7 @@
 var randomToken = require('random-token');
 
-var db = require('./db');
+var db = require('./../basis/db');
+var execution = require('./../basis/execution');
 
 function ordering(req, res, next) {
     //data
@@ -11,7 +12,7 @@ function ordering(req, res, next) {
     //repository and stars
     var repo_count = req.body.repo_count;
     var repos = [];
-    for(let i = 0; i < repo_count; i++) {
+    for(var i = 0; i < repo_count; i++) {
         repos[i] = {
             addr: req.body['repo_addr_' + i],
             stars: req.body['repo_stars_' + i]

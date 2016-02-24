@@ -1,6 +1,6 @@
-var db = require('./db');
+var db = require('./../basis/db');
 
-var checking = require('./user_checking');
+var checking = require('./../basis/user_checking');
 
 //add bot account
 function adding(req, res, next) {
