@@ -53,15 +53,13 @@ tables.orders = sequelize.define('orders', {
     }
 });
 
-tables.actions = sequelize.define('actions', {
+tables.logs = sequelize.define('logs', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    bot: Sequelize.INTEGER,
-    action: Sequelize.INTEGER,
-    target: Sequelize.TEXT
+    text: Sequelize.TEXT
 });
 
 //synchronization tables

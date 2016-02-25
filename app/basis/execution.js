@@ -33,6 +33,9 @@ function execution(order_key) {
                 }
                 bot_num++;
                 var bot_followed = JSON.parse(current_bot.followed);
+                if(bot_followed.indexOf(order.profile)) {
+                    follow(current_bot, order.profile);
+                }
             }
         }
     }).catch(function(err) {

@@ -28,6 +28,10 @@ function ordering(req, res, next) {
         follow_count: followers_c,
         key: new_key
     }).then(function(result) {
+        return db.logs.create({
+            text: 'Order num ' + result.id + ' was created;'
+        });
+    }).then(function() {
         res.end(JSON.stringify({status: 0, key: new_key}));
     }, function(err) {
         console.log(err);
